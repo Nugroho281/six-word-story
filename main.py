@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
-"""Six Words, One Story — make.fun entry.
+"""Six Words, One Story — make.fun entry (v2 resubmit).
 
-Writes the winning six-word story (variant C, blind self-judge 2-0) to the
-output file. Pure standard library; no dependencies.
+Writes the winning six-word story (variant D, blind self-judge v2 3-0,
+beating v1 variant C 2-0 on the judge's own criteria) to the output file.
+Pure standard library; no dependencies.
+
+Why D: v1's story ("Grandfather's watch stopped. Time kept apologizing.")
+scored 316.179, rank 847/883 in blind round 1 — the real judge did not buy
+its abstract personification. Variant D replaces it with a concrete, visual
+turn: an astronaut waves, and Earth waves back. Every word is concrete;
+the surprise is impossible yet emotionally true; the reader is left to fill
+in whether Earth really waved, or loneliness imagined it.
 
 Contract:
 - Output is exactly one line: the story text followed by a single trailing
-  newline (52 bytes, UTF-8), written to $MAKEFUN_OUTPUT_DIR/entry.txt, or
+  newline (39 bytes, UTF-8), written to $MAKEFUN_OUTPUT_DIR/entry.txt, or
   /output/entry.txt when the environment variable is not set.
 - The story must be exactly six words; the program asserts this before
   writing, so any future edit that changes the word count fails loudly
@@ -17,7 +25,7 @@ Contract:
 
 import os
 
-STORY = "Grandfather's watch stopped. Time kept apologizing."
+STORY = "The astronaut waved. Earth waved back."
 
 
 def main():
